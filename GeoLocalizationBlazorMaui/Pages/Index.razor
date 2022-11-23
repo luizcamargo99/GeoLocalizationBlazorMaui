@@ -1,0 +1,13 @@
+﻿@page "/"
+
+<h1>@_country</h1>
+
+
+@code {
+    private string _country { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        _country = await localizationService.GetCountryNameAsync();
+    }
+}
